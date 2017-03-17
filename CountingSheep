@@ -1,0 +1,81 @@
+package com.ford.it.cpmdaem.service.copycontent;
+
+import java.io.IOException;
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.List;
+
+public class CountingSheep {
+	
+	
+	private static int readTestCaseCount() throws IOException{
+		System.out.println("How many testcase you do want to execute ?");
+		int tc_count = System.in.read();
+		
+		return tc_count;
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		try {
+
+			System.out.println("Counting Sheep Problem");
+			int tc_count = readTestCaseCount();
+			if(tc_count > 100 || tc_count <= 0){
+				do{
+					System.out.println("Testcase count is limited to 0 - 100. Please enter a valid value .");
+					tc_count = readTestCaseCount();
+				}while(tc_count > 0 && tc_count <= 100);
+			}
+			
+			for(int i = 1; i<= tc_count; i++){
+				
+				
+				
+				ArrayList<Integer> defaults = new ArrayList<Integer>(); 
+				defaults.add(0);defaults.add(1);defaults.add(2);defaults.add(3);defaults.add(4);defaults.add(5);defaults.add(6);defaults.add(7);defaults.add(8);defaults.add(9);
+				
+				System.out.println("Enter N ?");
+				String sN = System.console().readLine();
+				
+				ArrayList<Integer> digits = new ArrayList<Integer>();
+				char[] cN = sN.toCharArray();
+				List<Integer> iN = new ArrayList<Integer>();
+				for(int j =0 ; j < cN.length; j++){
+					digits.add(Integer.parseInt(String.valueOf(cN[j])));
+					
+					int digit = Integer.parseInt(String.valueOf(cN[j]));
+					if(defaults.contains(digit)){
+						defaults.remove(digit);
+						if(defaults.size() == 0){
+							System.out.println("Case "+tc_count+":" + digit);
+						}
+					}
+				}
+				
+				
+				
+	
+				
+				
+				
+				
+				
+			}
+			
+			
+			
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+}
